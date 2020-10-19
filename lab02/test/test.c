@@ -23,8 +23,8 @@ unsigned short test_get_animal_by_name()
 #define DATA_SIZE 6
 
 	unsigned short is_success = 1;
-	enum animal_type input_data[] = { CAT, DOG, COW, PIG, ANIMAL_TYPE_COUNT, ANIMAL_TYPE_COUNT + 1 };
-	char *expected_values[] = { "Кіт",   "Собака", "Корова",
+	enum animal_type input_data[] = {  LUDINA, NIKITA, DOG, COW, PIG, ANIMAL_TYPE_COUNT, ANIMAL_TYPE_COUNT + 1 };
+	char *expected_values[] = { "Людина", "Никита",   "Собака", "Корова",
 				    "Свиня", "N/A",    "N/A" };
 
 	for (int i = 0; i < DATA_SIZE; i++) {
