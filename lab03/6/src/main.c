@@ -7,8 +7,5 @@ int main ()
     int N = x2 - x1 + 1;
     int S = ( x1 + x2 ) * N / 2 ;
 
-
-
-    printf ("Result = %d\n", S);
     return 0;
 }
