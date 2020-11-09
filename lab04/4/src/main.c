@@ -1,7 +1,7 @@
 int main()
 {
 
-    const float x = 0;
+    const float x = 2;
     float y;
 
     if ( x < -1 ) {

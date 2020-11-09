@@ -1,11 +1,16 @@
 int main () 
 {
     int k = 6;
-    int m = 9;
-    int n = 3;
+    int m = 5;
+    int n = 5;
     int z;
 
-    if ( k >= m ) {
+    if ( k == m && m == n && k == n) {
+        return 2;
+
+    }
+    else {
+            if ( k >= m ) {
         z = k;
         k = m;
         m = z;
@@ -22,6 +27,9 @@ int main ()
             m = z;
         }
     }
+    }
+
+
 
     return 0;
 }
