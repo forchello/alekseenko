@@ -1,0 +1,3 @@
+true tom_soyer 145 ранок 24 tverda
+false garry_potter 235 ранок 2 myaka
+true ukr_book 3245 небо 32 myaka
