@@ -1,0 +1,6 @@
+true hellower 145 ранок 15 tverda
+false garry_potter 235 ранок 2 myaka
+true ukr_book 32445 небо 32 myaka
+true korgi 1412 ранок 124 tverda
+false helper 24735 ранок 19 myaka
+true minecraft 135 небо 34 myaka

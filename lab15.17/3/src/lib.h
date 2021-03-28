@@ -97,13 +97,13 @@ void random_filling ( book *book_array, int N );
  * @function write_to_binfile
  *
  */
-void write_to_binfile ( FILE *binwrite, book *book_array, int N ); 
+void write_to_binfile ( FILE *binwrite, book *book_array, int i ); 
 
 /**
  * @function read_from_binfile
  *
  */	
-void read_from_binfile ( FILE *binread, book *book_array, int N );
+void read_from_binfile ( FILE *binread, book *book_array, int i );
 								
 
 #endif

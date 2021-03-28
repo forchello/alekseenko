@@ -340,16 +340,15 @@ void random_filling ( book *book_array, int n )
 }
 
 
-void write_to_binfile ( FILE *binwrite, book *book_array, int n )
+void write_to_binfile ( FILE *binwrite, book *book_array, int i )
 {
-    fwrite(book_array, sizeof(book), n, binwrite );
+    fseek( binwrite, sizeof(book) * i, SEEK_SET );
+    fwrite(book_array + i, sizeof(book), 1, binwrite );
 }
 
 
-void read_from_binfile ( FILE *binread, book *book_array, int n)
+void read_from_binfile ( FILE *binread, book *book_array, int i)
 {
-    for ( int i = 0; i < n; i++)
-    {
-        fread(book_array + i, sizeof(book), 1, binread );
-    }
+    fseek( binread, sizeof(book) * i, SEEK_SET );
+    fread(book_array + i, sizeof(book), 1, binread ); 
 }

@@ -57,11 +57,15 @@ int main()
 
 
 	FILE *binwrite = fopen("files/data/write.dat", "wb");
-	write_to_binfile( binwrite, book_array, N );
+	for ( int i = 0; i < N; i++ )
+		write_to_binfile( binwrite, book_array, i );
+	
 	fclose(binwrite);
 
 	FILE *binread = fopen("files/data/write.dat", "rb");
-	read_from_binfile ( binread, book_array, N );
+	for ( int i = 0; i < N; i++ )
+		read_from_binfile ( binread, book_array, i );
+
 	fclose(binread);
 
 	printf("----------------------------------------\nЗадание на отлично\n----------------------------------------\n\n");
