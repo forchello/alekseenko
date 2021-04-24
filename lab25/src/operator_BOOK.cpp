@@ -67,7 +67,7 @@ ostream& operator<< (ostream &out, const BOOK &object)
 istream& operator>> (istream &in, BOOK &object)
 {
     string temp_ebook, temp_material, temp_name;
-    regex regular("^[A-ZА-ЯЁ]([A-Za-z]|[А-Яа-я]|[0-9]|([,?!\\._ ][^\\.,?!_ ]))+");
+    regex regular("^[A-Z]([A-Za-z0-9]|([,?!\\._ ][^\\.,?!_ ]))+");
 
     in >> temp_ebook >> temp_name >> object.pages >> object.pub.name >> object.pub.version >> temp_material ; 
     object.ebook = StringToBool(temp_ebook); 
@@ -77,7 +77,7 @@ istream& operator>> (istream &in, BOOK &object)
     if ( regex_match(temp_name.c_str(), regular ) )
         object.name = temp_name;
     else
-        object.name = "ERROR_NAME";
+        object.name = "INVALID_NAME";
 
     return in;
 }
