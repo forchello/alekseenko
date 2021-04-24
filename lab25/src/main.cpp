@@ -54,5 +54,6 @@ int main()
 
     MY_COLLECTION.delete_book( index-1 );
     MY_COLLECTION.print_library();
-    
+
+    return 0;
 }

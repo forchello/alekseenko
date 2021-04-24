@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
+#include <ostream>
 #include <ctime>
 #include <sstream>
 
@@ -20,3 +21,6 @@ using std::ifstream;
 using std::ofstream;
 using std::ios;        // указатель на начало;
 using std::stringstream;
+
+using std::ostream;
+using std::istream;

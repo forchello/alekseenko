@@ -31,6 +31,14 @@ public:
     void add_book( BOOK &object, int index );
     void delete_book( int index );
 
+    BOOK& operator[] (int index);
+    BOOK& operator[] (int index) const;
+
+    friend ostream& operator<< (ostream &out, const BOOK_ARRAY &object);
+    friend istream& operator>> (istream &in, BOOK_ARRAY &object); 
+
+    friend ofstream& operator<< (ofstream &out, const BOOK_ARRAY &object);
+    friend ifstream& operator>> (ifstream &in, BOOK_ARRAY &object); 
 };
 
 #endif

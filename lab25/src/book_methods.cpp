@@ -58,8 +58,6 @@ BOOK::BOOK( const BOOK &object )               // конструктор коп�
 
 	this -> pub.name =  object.pub.name;
 	this -> pub.version =  object.pub.version; 
-
-	cout << "\nКонструктор копирования\n";
 };  
 
 string BOOK::to_string()

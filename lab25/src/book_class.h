@@ -58,7 +58,20 @@ class BOOK
 
         string to_string();
         void from_string( string result );
-       
+        
+        void operator =(const BOOK &object);
+        bool operator ==(const BOOK &object);
+        bool operator !=(const BOOK &object);
+
+        bool operator <(const BOOK &object);
+        bool operator <=(const BOOK &object);
+        bool operator >(const BOOK &object);
+        bool operator >=(const BOOK &object);
+
+        friend ostream& operator<< (ostream &out, const BOOK &object);
+        friend istream& operator>> (istream &in, BOOK &object); 
 };
+ 
+
 
 #endif
