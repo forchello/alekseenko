@@ -40,26 +40,6 @@ void BOOK_ARRAY::read_from_file( string path )
 			std::getline(fin, tmp_result);
 
 			library[i].from_string(tmp_result);
-			/*
-			string tmp_ebook;
-			bool temp_ebook;
-			string tmp_name_book, tmp_pub_name;
-			int tmp_pages, tmp_pub_version;
-			string tmp_material;
-			BOOK::cover temp_material;
-
-			fin >> tmp_ebook >> tmp_name_book >> tmp_pages >> tmp_pub_name >> tmp_pub_version >> tmp_material;
-
-			temp_ebook = ( StringToBool(tmp_ebook) );
-
-			if ( tmp_material == "tverda" )
-				temp_material = BOOK::tverda;
-			else if ( tmp_material == "myaka" )
-				temp_material = BOOK::myaka;
-
-			library[i].SetParam(temp_ebook, tmp_name_book, tmp_pages, temp_material, tmp_pub_name, tmp_pub_version );
-			*/
-			
 		}
 	}
 
@@ -79,18 +59,6 @@ void BOOK_ARRAY::write_to_file( string path )
 	{
 		for ( int i = 0; i < size; i++ )
 		{
-			/*
-			bool temp_ebook;
-			string tmp_name_book, tmp_pub_name;
-			int tmp_pages, tmp_pub_version;
-			BOOK::cover temp_material;
-
-			library[i].GetParam( &temp_ebook, &tmp_name_book, &tmp_pages, &temp_material, &tmp_pub_name, &tmp_pub_version);
-
-			fout << BoolToString(temp_ebook) << ' ' << tmp_name_book << ' ' << tmp_pages << ' ' << tmp_pub_name << ' ' 
-					<< tmp_pub_version << ' ' <<  ( temp_material == 0 ? "tverda" : "myaka" ) << ( i != size-1 ? "\n" : "" );
-			*/
-
 			fout << library[i].to_string();
 			
 			if ( i != size - 1 )

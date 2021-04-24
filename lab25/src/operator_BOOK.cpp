@@ -66,11 +66,18 @@ ostream& operator<< (ostream &out, const BOOK &object)
 
 istream& operator>> (istream &in, BOOK &object)
 {
-    string temp_ebook, temp_material;
-    in >> temp_ebook >> object.name >> object.pages >> object.pub.name >> object.pub.version >> temp_material ; 
+    string temp_ebook, temp_material, temp_name;
+    regex regular("^[A-ZА-ЯЁ]([A-Za-z]|[А-Яа-я]|[0-9]|([,?!\\._ ][^\\.,?!_ ]))+");
+
+    in >> temp_ebook >> temp_name >> object.pages >> object.pub.name >> object.pub.version >> temp_material ; 
     object.ebook = StringToBool(temp_ebook); 
 
     temp_material == "tverda" ? object.material = BOOK::tverda : object.material = BOOK::myaka;
+
+    if ( regex_match(temp_name.c_str(), regular ) )
+        object.name = temp_name;
+    else
+        object.name = "ERROR_NAME";
 
     return in;
 }

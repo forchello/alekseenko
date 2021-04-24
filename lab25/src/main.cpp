@@ -1,7 +1,7 @@
 #include "book_array_class.h"
 
 int main()
-{
+{/*
     BOOK_ARRAY MY_COLLECTION(6);
 
     string path;
@@ -55,5 +55,10 @@ int main()
     MY_COLLECTION.delete_book( index-1 );
     MY_COLLECTION.print_library();
 
-    return 0;
+    return 0;*/
+
+    BOOK_ARRAY MY_COLLECTION(6);
+    ifstream hello("files/read.txt");
+    hello >> MY_COLLECTION;
+    cout << MY_COLLECTION << endl;
 }

@@ -6,6 +6,7 @@
 #include <ostream>
 #include <ctime>
 #include <sstream>
+#include <regex>
 
 #include "tobool.h"
 
@@ -24,3 +25,8 @@ using std::stringstream;
 
 using std::ostream;
 using std::istream;
+
+// регулярные выражения
+using std::regex;
+using std::regex_match;
+using std::cmatch;

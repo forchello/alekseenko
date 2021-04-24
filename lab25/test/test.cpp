@@ -6,11 +6,10 @@ void test()
 
     string path = "files/read.txt";
 
-    test_collection.read_from_file( path );
+    ifstream test(path);
+    test >> test_collection;
 
-    int result = test_collection.find_ranok_book();
-
-    if ( result == 3 )
+    if ( test_collection[1] > test_collection[2] )
     {
         cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
         cout << "┃    Функция " << __FUNCTION__ <<" сработала успешно!   ┃" << endl;
