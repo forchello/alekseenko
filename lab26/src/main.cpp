@@ -1,12 +1,13 @@
-#include "book_array_class.h"
+//#include "ARR_heir1.h"
+#include "ARR_heir2.h"
 
 int main()
-{/*
-    BOOK_ARRAY MY_COLLECTION(6);
+{
+    SCIENTIFIC_BOOK_ARRAY MY_COLLECTION(6);
 
     string path;
     cout << "Введите путь файла, с которого осуществляется чтение: \n━━ ";
-    getline(std::cin, path );
+    getline( cin, path );
     cout << endl;
 
     MY_COLLECTION.read_from_file( path );
@@ -14,18 +15,13 @@ int main()
 
     path = "";
     cout << "Введите путь файла, в который осуществляется запись: \n━━ ";
-    getline(std::cin, path );
+    getline( cin, path );
     MY_COLLECTION.write_to_file( path );
 
 
     MY_COLLECTION.print_library();
 
-    cout << endl << endl;
-    cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
-    cout << "┃    Программа нашла " << MY_COLLECTION.find_ranok_book() << " книг(и/у) издательства 'РАНОК'    ┃" << endl;
-    cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
-
-    BOOK new_book;
+    SCIENTIFIC_BOOK new_book;
     int index = 0;
     
     cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
@@ -42,7 +38,6 @@ int main()
     MY_COLLECTION.print_library();
 
     
-    
     cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
     cout << "┃          C какого элемента нужно удалить книгу?        ┃" << endl;
     cout << "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
@@ -55,14 +50,18 @@ int main()
     MY_COLLECTION.delete_book( index-1 );
     MY_COLLECTION.print_library();
 
-    return 0;*/
 
-    BOOK_ARRAY MY_COLLECTION(6);
-    ifstream hello("files/read.txt");
-    hello >> MY_COLLECTION;
-    cout << MY_COLLECTION << endl << endl << endl;
+    cout << endl << endl;
+    cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+    cout << "┃    Программа нашла " << MY_COLLECTION.find_ranok_book() << " книг(и/у) издательства 'РАНОК'    ┃" << endl;
+    cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
+    //cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+    //cout << "┃     Программа нашла " << MY_COLLECTION.find_detective() << " детектив (а/ов) с эл.версией     ┃" << endl;
+    //cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
+    cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+    cout << "┃              Cамая большая книга - №" << MY_COLLECTION.biggest_book() << "                  ┃" << endl;
+    cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
+    cout << endl << endl;
 
-    BOOK temp;
-    temp = MY_COLLECTION[4];
-    cout << temp << endl;
+    return 0;
 }
