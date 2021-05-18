@@ -1,4 +1,4 @@
-#include "book_array_class.h"
+#include "book/book_array_class.h"
 
 class ARTISTIC_BOOK : public BOOK
 {

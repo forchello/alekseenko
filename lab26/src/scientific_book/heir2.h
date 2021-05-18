@@ -1,4 +1,4 @@
-#include "heir1.h"
+#include "artistic_book/heir1.h"
 
 class SCIENTIFIC_BOOK : public BOOK
 {

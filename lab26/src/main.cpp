@@ -1,5 +1,5 @@
 //#include "ARR_heir1.h"
-#include "ARR_heir2.h"
+#include "scientific_book/ARR_heir2.h"
 
 int main()
 {

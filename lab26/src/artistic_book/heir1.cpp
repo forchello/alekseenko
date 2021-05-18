@@ -29,7 +29,7 @@ void ARTISTIC_BOOK::GetParam( BOOK *object, direction_type *direction, genre_typ
 
 ARTISTIC_BOOK::ARTISTIC_BOOK( const ARTISTIC_BOOK &object )
 {
-    *(BOOK*)this = object;
+    *(BOOK*)this = object;               
     this -> direction = object.direction;
     this -> genre = object.genre;
 }

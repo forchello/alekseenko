@@ -1,6 +1,6 @@
 targets = main.exe test.exe
 CC = g++
-C_OPTS = -g -Wall -Wextra -Wformat-security -Wfloat-equal -Wshadow -Wconversion -Wlogical-not-parentheses -Wnull-dereference -I./src src/book_methods.cpp src/book_array_methods.cpp src/tobool.cpp src/operator_BOOK.cpp src/operator_BOOK_ARRAY.cpp src/heir1.cpp src/heir2.cpp  src/ARR_heir1.cpp src/ARR_heir2.cpp
+C_OPTS = -g -Wall -Wextra -Wformat-security -Wfloat-equal -Wshadow -Wconversion -Wlogical-not-parentheses -Wnull-dereference -I./src src/book/book_methods.cpp src/book/book_array_methods.cpp src/tools/tobool.cpp src/book/operator_BOOK.cpp src/book/operator_BOOK_ARRAY.cpp src/artistic_book/heir1.cpp src/scientific_book/heir2.cpp  src/artistic_book/ARR_heir1.cpp src/scientific_book/ARR_heir2.cpp
 
 all: run
 

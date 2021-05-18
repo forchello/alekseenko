@@ -7,6 +7,8 @@
 #include <ctime>
 #include <sstream>
 #include <regex>
+#include <vector>
+#include <map>
 
 #include "tools/tobool.h"
 
@@ -30,3 +32,8 @@ using std::istream;
 using std::regex;
 using std::regex_match;
 using std::cmatch;
+
+//stl
+using std::vector;
+
+using namespace std;

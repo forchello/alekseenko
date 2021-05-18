@@ -1,0 +1,6 @@
+1 true Hellower 145 ранок 15 tverda modern novel
+1 true Garry_potter 235 ранок 2 myaka postmodern detective
+1 true Ukr_book 32445 небо 32 myaka postmodern detective
+1 true Korgi 1412 ранок 124 tverda renaissance roman
+1 false Helper 24735 украина 19 myaka renaissance story
+1 true Minecraft 135 ранок 34 myaka modern story

@@ -1,0 +1,6 @@
+2 true Hellower 145 ранок 15 tverda biology true
+2 false Garry_potter 235 ранок 2 myaka biology false
+2 true Ukr_book 32445 небо 32 myaka programming false
+2 true Korgi 1412 ранок 124 tverda chemistry true
+2 false Helper 24735 украина 19 myaka physics true
+2 true Minecraft 135 небо 34 myaka chemistry false
