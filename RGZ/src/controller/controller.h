@@ -12,14 +12,14 @@ class CONTROLLER : public BOOK_ARRAY
 
     private:
 
-        void SortingByPages();
-        void SortingByName();
-        void SortingByEbook();
+        void SortingByPages();              // сортировка по страницам
+        void SortingByName();               // сортировка по названию книги
+        void SortingByEbook();              // сортировка по наличии эл.версии
 
     public:
 
         int find_ranok_book();              // метод ищет все книги издательства "РАНОК" в массиве,                                    
-        int biggest_book(); 
-        int find_detective();
+        int biggest_book();                 // метод ищем самую большую по количеству страниц книгу 
+        int find_detective();               // метод ищет детективы с эл.версией
 };
 

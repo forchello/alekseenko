@@ -1,8 +1,10 @@
 #include "controller.h" 
 
+// метод чтения из файла
+
 void CONTROLLER::read_from_file(string path)
 {
-    ifstream fin(path);
+    ifstream fin(path);				// откроем поток
 
 	fin.seekg(0,ios::cur);				//переместил курсор на начало файла
 
@@ -26,7 +28,7 @@ void CONTROLLER::read_from_file(string path)
 			getline(fin, tmp_result);
 
 			
-			if ( book_type_one == 2 ) 
+			if ( book_type_one == 2 ) 	// занимаем нужные поля в зависимости от типа наследника
 				((SCIENTIFIC_BOOK*)array[i])->from_string(tmp_result), book_type[i] = book_type_one;
 
 			else if ( book_type_one == 1 )
@@ -42,7 +44,7 @@ void CONTROLLER::read_from_file(string path)
 
 void CONTROLLER::write_to_file( string path )
 {
-	ofstream fout(path);
+	ofstream fout(path);			// открываем поток
 
 	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
 	cout << "┃   Записываются файлы в " << __FUNCTION__ <<"   ┃\n";
@@ -54,7 +56,7 @@ void CONTROLLER::write_to_file( string path )
 	{
 		for ( int i = 0; i < size; i++ )
 		{
-			if ( book_type[i] == 2 ) 
+			if ( book_type[i] == 2 ) // занимаем нужные поля в зависимости от типа наследника
 				fout << ((SCIENTIFIC_BOOK*)array[i])->to_string();
 
 			else if ( book_type[i] == 1 )
@@ -68,19 +70,19 @@ void CONTROLLER::write_to_file( string path )
 
 //---------------------------------------------------------
 
-void CONTROLLER::sorting()
+void CONTROLLER::sorting()			// функция сортировки
 {
-    BOOK** temp_book = new BOOK* [size];
+    BOOK** temp_book = new BOOK* [size];			// создаем временную книгу
 
-    for ( int i = 0 ; i < size; i++)
+    for ( int i = 0 ; i < size; i++)				// заполняем ее
 	{
 		temp_book[i] = array[i];	
 	}
 
-    array.clear();
-	array.reserve(size);
+    array.clear();									// чистим оригинальную книгу
+	array.reserve(size);							
 
-	for ( int i = 0; i < size; i++)
+	for ( int i = 0; i < size; i++)					// заполняем с временной книги как нужно
 	{
         array.push_back(temp_book[i]);
     }
@@ -93,6 +95,8 @@ void CONTROLLER::sorting()
 
 	short int var_sort;
 	cin >> var_sort;
+
+	// выбираем вариант сортировки и переходим в нужный метод
 
 	switch( var_sort )
 	{
@@ -155,12 +159,14 @@ void CONTROLLER::SortingByEbook()
 
 //---------------------------------------------------------
 
+// МЕТОД 1 - найти все книги издательства ранок
 
 int CONTROLLER::find_ranok_book()
 {   
     int k = 0;
 	for ( int i = 0; i < size; i++ )
 	{
+		// в зависимости от типа наследника вызываем нужные геттеры и ищем книги
 		if ( book_type[i] == 2)
 		{
 			bool temp_ebook, certification;
@@ -195,12 +201,15 @@ int CONTROLLER::find_ranok_book()
     return k;
 }
 
+// МЕТОД 2 - найти самую большую по страницам книгу
+
 int CONTROLLER::biggest_book()
 {   
     int count_pages = 0, num_book = 0;
 
 	for ( int i = 0; i < size; i++ )
 	{
+		// в зависимости от типа наследника вызываем нужные геттеры и ищем самую большую книгу
 		if ( book_type[i] == 2)
 		{
 			bool temp_ebook, certification;
@@ -253,12 +262,15 @@ int CONTROLLER::biggest_book()
     return num_book + 1;
 }
 
+// МЕТОД 3 - найти детективы с эл.версией
+
 int CONTROLLER::find_detective()
 {
 	int count = 0;
 
 	for ( int i = 0; i < size; i++ )
 	{
+		// так как детективы это 1 тип наследника, 2 тип мы даже не будем рассматривать// в зависимости от типа наследника вызываем нужные геттеры и ищем книги
 		if ( book_type[i] == 1 )	
 		{
 			bool temp_ebook;

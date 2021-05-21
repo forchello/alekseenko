@@ -8,7 +8,7 @@ class MENU
 
     public:
 
-        ~MENU();
+        ~MENU();                    // диструктор
 
-        void start();
+        void start();               // метод заупска программы
 };

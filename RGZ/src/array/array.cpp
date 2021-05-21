@@ -1,6 +1,6 @@
 #include "array.h"
 
-BOOK_ARRAY::BOOK_ARRAY()
+BOOK_ARRAY::BOOK_ARRAY() 	// дефолтный конструктор
 {
     cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
 	cout << "┃       Вызвался  стандартный конструктор BOOK_ARRAY      ┃\n";
@@ -21,7 +21,7 @@ BOOK_ARRAY::BOOK_ARRAY()
 
 }
 
-BOOK_ARRAY::BOOK_ARRAY( int n )
+BOOK_ARRAY::BOOK_ARRAY( int n )		// конструктор с параметрами, в данном случае с количеством книг в массиве
 {
     cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
 	cout << "┃       Вызвался конструктор BOOK_ARRAY      ┃\n";
@@ -42,7 +42,7 @@ BOOK_ARRAY::BOOK_ARRAY( int n )
 
 }
 
-BOOK_ARRAY::~BOOK_ARRAY()
+BOOK_ARRAY::~BOOK_ARRAY()		// диструктор, в котором происходит удаление всех массивов во избежание утечек памяти
 {
     cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
 	cout << "┃       Вызвался деструктор BOOK_ARRAY      ┃\n";
@@ -65,7 +65,8 @@ BOOK_ARRAY::BOOK_ARRAY( const BOOK_ARRAY &object )		// констуктор ко
 
 }
 
-BOOK_ARRAY BOOK_ARRAY::operator = ( const BOOK_ARRAY &object )
+
+BOOK_ARRAY BOOK_ARRAY::operator = ( const BOOK_ARRAY &object ) // оператор присваивания
 {
 	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
 	cout << "┃              Вызвался оператор =          ┃\n";
@@ -79,7 +80,6 @@ BOOK_ARRAY BOOK_ARRAY::operator = ( const BOOK_ARRAY &object )
 	
 	book_type = new int[size];
 
-    //array = new BOOK* [size];
 	array = object.array;
 	
 	for( int i = 0; i < size; i++) 
@@ -89,10 +89,11 @@ BOOK_ARRAY BOOK_ARRAY::operator = ( const BOOK_ARRAY &object )
     
 }
 
-void BOOK_ARRAY::print_library()
+void BOOK_ARRAY::print_library()		// вывод в консоль массива книг
 {	
 	for ( int i = 0; i < size; i++ )
 	{
+		// в зависимости от типа наследника, вызываем нужные геттеры, заполняем переменные и вывод их содержимое 
 		if ( book_type[i] == 2 ) 
 		{
 			bool temp_ebook, certification;
@@ -100,6 +101,7 @@ void BOOK_ARRAY::print_library()
 			int tmp_pages, tmp_pub_version;
 			SCIENTIFIC_BOOK::cover temp_material;
 			SCIENTIFIC_BOOK::scope_type temp_scope;
+
 			((SCIENTIFIC_BOOK*)array[i])->GetParam( &temp_ebook, &tmp_name_book, &tmp_pages, &temp_material, &tmp_pub_name, 
 												&tmp_pub_version, &temp_scope, &certification );
 			
@@ -206,7 +208,7 @@ void BOOK_ARRAY::print_library()
 	}
 }
 
-void BOOK_ARRAY::add_book( BOOK* object, int index )
+void BOOK_ARRAY::add_book( BOOK* object, int index )		// добаввление книги в массив
 {
 	this->size++;
 
@@ -246,7 +248,7 @@ void BOOK_ARRAY::add_book( BOOK* object, int index )
 	book_type = book_type_temp;
 }
 
-void BOOK_ARRAY::delete_book( int index )
+void BOOK_ARRAY::delete_book( int index )		// удаление массива книг
 {	
 	int n = --this->size;
 
@@ -261,7 +263,7 @@ void BOOK_ARRAY::ConcVec(vector<BOOK*> array2 )
     array.insert( array.end(), array2.begin(), array2.end()); //В конец 1 вектор1 записывается вектор2 с начала до конца
 }
 
-void BOOK_ARRAY::clear()
+void BOOK_ARRAY::clear()				// доп.метод чистки вектора ( на всякий случай )
 {
 	array.clear();
 }

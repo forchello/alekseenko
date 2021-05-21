@@ -31,8 +31,6 @@ class BOOK_ARRAY
         // ------------------------------------------
         // МЕТОДЫ
 
-        //void read_from_file(string path);
-        //void write_to_file(string path);
     
         void print_library();
 
